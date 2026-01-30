@@ -1,11 +1,5 @@
 from bot.client import app
 
-# FORCE IMPORT ALL HANDLERS
-import bot.handlers.ranking
-import bot.handlers.admin
-import bot.handlers.start
-import bot.handlers.counter
-
 # ─────────────────────────────
 # Fake Web Server (Render needs this)
 # ─────────────────────────────
@@ -24,6 +18,12 @@ def run_web():
     web.run(host="0.0.0.0", port=port)
 
 threading.Thread(target=run_web, daemon=True).start()
+
+# FORCE IMPORT ALL HANDLERS
+import bot.handlers.ranking
+import bot.handlers.admin
+import bot.handlers.start
+import bot.handlers.counter
 
 # ─────────────────────────────
 # Start Bot
