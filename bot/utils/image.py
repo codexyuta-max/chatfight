@@ -85,6 +85,6 @@ def leaderboard_image(data, title="LEADERBOARD"):
             )
 
 
-    path = "leaderboard.png"
+    path = "resource/leaderboard.png"
     img.save(path)
     return path

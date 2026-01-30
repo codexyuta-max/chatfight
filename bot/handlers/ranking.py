@@ -1,5 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+import os
 
 from bot.client import app
 from bot.database import stats
@@ -93,6 +94,10 @@ async def ranking(_, m):
         caption=caption,
         reply_markup=keyboard()
     )
+
+    # Delete the image after sending
+    if os.path.exists(image_path):
+        os.remove(image_path)
 
 
 # ---------- CALLBACKS (TEXT ONLY) ----------
